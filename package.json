@@ -1,0 +1,31 @@
+{
+  "name": "skedular",
+  "version": "1.0.0",
+  "description": "A minimalistic time/date and timer library",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --coverage",
+    "start": "nodemon lib/index.js"
+  },
+  "author": "Simeon Akpanudo",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "jest": "^24.9.0",
+    "nodemon": "^1.19.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cmion/skedular.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cmion/skedular/issues"
+  },
+  "homepage": "https://github.com/cmion/skedular#readme",
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": [
+      "html"
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+    "vscode.tsc.compiler.alertTSConfigChanges": "never",
+    "editor.autoIndent": true,
+    "editor.tabSize": 4,
+    "editor.useTabStops": true,
+    "eslint.provideLintTask": true, 
+    "eslint.enable": true,
+    "prettier.eslintIntegration": true,
+    "eslint.packageManager": "yarn",
+    "eslint.alwaysShowStatus": true,
+    "prettier.parser": "flow",
+    "prettier.trailingComma": "all"
+}
