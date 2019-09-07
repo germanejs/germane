@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest --coverage",
     "start": "nodemon lib/index.js",
-    "coveralls": "jest --coverage && cat ./test/coverage/lcov.info  | coveralls"
+    "coveralls": "jest --coverage && coveralls | cat ./test/coverage/lcov.info"
   },
   "author": "Simeon Akpanudo (https://github.com/cmion)",
   "license": "MIT",
@@ -24,10 +24,7 @@
   },
   "homepage": "https://github.com/germanejs/germane#readme",
   "jest": {
-    "collectCoverage": true,
-    "coverageReporters": [
-      "html"
-    ]
+    "collectCoverage": true
   },
   "dependencies": {
     "coveralls": "^3.0.6"
