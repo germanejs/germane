@@ -1,13 +1,14 @@
 {
-  "name": "skedular",
+  "name": "germane",
   "version": "1.0.0",
   "description": "A minimalistic time/date and timer library",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
-    "start": "nodemon lib/index.js"
+    "start": "nodemon lib/index.js",
+    "coveralls": "jest --coverage && cat ./test/coverage/lcov.info  | coveralls"
   },
-  "author": "Simeon Akpanudo",
+  "author": "Simeon Akpanudo (https://github.com/cmion)",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^6.1.0",
@@ -16,16 +17,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cmion/skedular.git"
+    "url": "https://github.com/germanejs/germane.git"
   },
   "bugs": {
-    "url": "https://github.com/cmion/skedular/issues"
+    "url": "https://github.com/germanejs/germane/issues"
   },
-  "homepage": "https://github.com/cmion/skedular#readme",
+  "homepage": "https://github.com/germanejs/germane#readme",
   "jest": {
     "collectCoverage": true,
     "coverageReporters": [
       "html"
     ]
+  },
+  "dependencies": {
+    "coveralls": "^3.0.6"
   }
 }
