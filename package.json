@@ -4,9 +4,8 @@
   "description": "A minimalistic time/date and timer library",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage",
-    "start": "nodemon lib/index.js",
-    "coveralls": "jest --coverage && coveralls | cat ./test/coverage/lcov.info"
+    "test": "jest --coverage && coveralls | cat ./test/coverage/lcov.info",
+    "start": "nodemon lib/index.js"
   },
   "author": "Simeon Akpanudo (https://github.com/cmion)",
   "license": "MIT",
