@@ -10,10 +10,10 @@
   "author": "Simeon Akpanudo (https://github.com/cmion)",
   "license": "MIT",
   "devDependencies": {
+    "coveralls": "^3.0.6",
     "eslint": "^6.1.0",
     "jest": "^24.9.0",
-    "nodemon": "^1.19.1",
-    "coveralls": "^3.0.6"
+    "nodemon": "^1.19.1"
   },
   "repository": {
     "type": "git",
