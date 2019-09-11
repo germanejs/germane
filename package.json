@@ -25,5 +25,8 @@
   "homepage": "https://github.com/germanejs/germane#readme",
   "jest": {
     "collectCoverage": true
+  },
+  "dependencies": {
+    "eslint-utils": "1.4.2"
   }
 }
