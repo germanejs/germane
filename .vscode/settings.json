@@ -3,11 +3,21 @@
     "editor.autoIndent": true,
     "editor.tabSize": 4,
     "editor.useTabStops": true,
-    "eslint.provideLintTask": true, 
+    "eslint.provideLintTask": true,
     "eslint.enable": true,
     "prettier.eslintIntegration": true,
     "eslint.packageManager": "yarn",
     "eslint.alwaysShowStatus": true,
-    "prettier.parser": "flow",
-    "prettier.trailingComma": "all"
+    "prettier.parser": "babylon",
+    "prettier.trailingComma": "all",
+    "editor.lineHeight": 22,
+    "eslint.autoFixOnSave": true,
+    "editor.formatOnSave": true,
+    // Enable per-language
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.fontFamily": "consolas, 'Courier New', monospace",
 }
