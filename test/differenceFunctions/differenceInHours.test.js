@@ -10,10 +10,10 @@ describe("differenceInHours returns the distance between two dates in hours", ()
     ).toBe(71667);
 
     expect(differenceInHours(germane("2010-11-19 18:34:52"), germane("2000-01-23 12:11:09"))).toBe(
-      94878,
+      -94878,
     );
 
-    expect(differenceInHours(germane("2019-12-31 18:34:52"), germane("1970-01-01 12:11:09"))).toBe(
+    expect(differenceInHours(germane("1970-01-01 12:11:09"), germane("2019-12-31 18:34:52"))).toBe(
       438270,
     );
   });

@@ -1,7 +1,7 @@
 const startOfDay = require("../../../lib/startOfDay");
 const germane = require("../../../lib/germane");
 
-describe("Returns the total hour|minute|seconds passed since the start of the date provided", () => {
+describe("Returns the total hour|minute|seconds passed since the startDate of the date provided", () => {
   test("should return time passed ", () => {
     expect(startOfDay(germane("1800-09-04 23:12:19Z"))).toBe("23 hours ago");
     expect(startOfDay(germane("2019-01-01"))).toBe("0 second ago");

@@ -1,8 +1,8 @@
 const startOfWeek = require("../../../lib/startOfWeek");
 const germane = require("../../../lib/germane");
 
-describe("Returns the start of the current week of given date", () => {
-  test("should return {values(how many days since the start of week)} in days", () => {
+describe("Returns the startDate of the current week of given date", () => {
+  test("should return {values(how many days since the startDate of week)} in days", () => {
     expect(startOfWeek(germane("1980-12-31 09:09:09Z"))).toBe("3 days ago");
     expect(startOfWeek(germane("1975-10-05 00:12:09Z"))).toBe("12 minutes ago");
 

@@ -14,11 +14,11 @@ describe("differenceInWeeks returns the distance or difference between two dates
 
     expect(
       differenceInWeeks(germane("2010-11-19 18:34:52Z"), germane("2000-01-23 12:11:09Z")),
-    ).toBe(564);
+    ).toBe(-564);
 
     expect(
       differenceInWeeks(new Date("2019 12 31 18:34:52"), new Date("1970 01 01 12:11:09")),
-    ).toBe(2608);
+    ).toBe(-2608);
   });
 
   test("should throw errors", () => {

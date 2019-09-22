@@ -3,7 +3,7 @@ const germane = require("../../lib/germane");
 
 describe("differenceInBusinessDays returns the difference in business days (usually mon - fri) between two dates, in days", () => {
   test("should return the number of business days between two dates", () => {
-    expect(differenceInBusinessDays(germane("2019-03-04"), germane("2019-04-03"))).toBe(23);
+    expect(differenceInBusinessDays(germane("2019-04-03"), germane("2019-03-04"))).toBe(-23);
 
     expect(differenceInBusinessDays(germane("2019-08-05"), germane("2019-11-08"))).toBe(70);
 
@@ -14,7 +14,7 @@ describe("differenceInBusinessDays returns the difference in business days (usua
     expect(differenceInBusinessDays(new Date("2019 03 04"), new Date("2019 04 03"))).toBe(23);
 
     expect(differenceInBusinessDays(germane(new Date("2015 08 05")), germane("2015-07-05"))).toBe(
-      23,
+      -23,
     );
 
     expect(differenceInBusinessDays(new Date("2015 07 04"), new Date("2015 07 05"))).toBe(0);

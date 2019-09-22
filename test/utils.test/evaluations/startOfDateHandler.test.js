@@ -7,8 +7,8 @@ const {
   startOfYearHandler,
 } = require("../../../lib/utils/evaluations/startOfDateHandlers");
 
-describe("Handles difference from given datetime to the start of its hour", () => {
-  test("should return it start of its hour", () => {
+describe("Handles difference from given datetime to the startDate of its hour", () => {
+  test("should return it startDate of its hour", () => {
     expect(startOfHourHandler(new Date("2019-09-08 19:12:12Z"))).toStrictEqual({
       hours: 0,
       minutes: 12,
@@ -21,7 +21,7 @@ describe("Handles difference from given datetime to the start of its hour", () =
     });
   });
 
-  test("should return the start of its minute", () => {
+  test("should return the startDate of its minute", () => {
     expect(startOfHourHandler(new Date("2019-09-08 21:19:56Z"))).toStrictEqual({
       hours: 0,
       minutes: 19,
@@ -35,8 +35,8 @@ describe("Handles difference from given datetime to the start of its hour", () =
   });
 });
 
-describe("Handles difference from given datetime to the start of its day", () => {
-  test("should return start of its day as an object", () => {
+describe("Handles difference from given datetime to the startDate of its day", () => {
+  test("should return startDate of its day as an object", () => {
     expect(startOfDayHandler(new Date("2005-12-09 22:34:12Z"))).toStrictEqual({
       hours: 22,
       minutes: 34,
@@ -50,8 +50,8 @@ describe("Handles difference from given datetime to the start of its day", () =>
   });
 });
 
-describe("Handles difference from given datetime to the start of its week", () => {
-  test("should return start of its week as an object", () => {
+describe("Handles difference from given datetime to the startDate of its week", () => {
+  test("should return startDate of its week as an object", () => {
     expect(startOfWeekHandler(new Date("2005-12-09 22:34:12Z"))).toStrictEqual({
       days: 5,
       totalDays: -5,
@@ -71,8 +71,8 @@ describe("Handles difference from given datetime to the start of its week", () =
   });
 });
 
-describe("Handles difference from given datetime to the start of its month", () => {
-  test("should return start of its month as an object", () => {
+describe("Handles difference from given datetime to the startDate of its month", () => {
+  test("should return startDate of its month as an object", () => {
     expect(startOfMonthHandler(new Date("2005-12-09 22:34:12Z"))).toStrictEqual({
       days: 1,
       months: 0,
@@ -92,8 +92,8 @@ describe("Handles difference from given datetime to the start of its month", () 
   });
 });
 
-describe("Handles difference from given datetime to the start of its quarter", () => {
-  test("should return start of its quarter as an object", () => {
+describe("Handles difference from given datetime to the startDate of its quarter", () => {
+  test("should return startDate of its quarter as an object", () => {
     expect(startOfQuarterHandler(new Date("2005-12-09 22:34:12Z"))).toStrictEqual({
       days: 1,
       months: 2,
@@ -113,8 +113,8 @@ describe("Handles difference from given datetime to the start of its quarter", (
   });
 });
 
-describe("Handles difference from given datetime to the start of its year", () => {
-  test("should return start of its year as an object", () => {
+describe("Handles difference from given datetime to the startDate of its year", () => {
+  test("should return startDate of its year as an object", () => {
     expect(startOfYearHandler(new Date("2005-06-23 10:00:45Z"))).toStrictEqual({
       days: 1,
       months: 5,

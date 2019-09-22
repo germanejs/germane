@@ -1,7 +1,7 @@
 const startOfHour = require("../../../lib/startOfHour");
 const germane = require("../../../lib/germane");
 
-describe("Returns the start of current hour in words", () => {
+describe("Returns the startDate of current hour in words", () => {
   test("should return (difference in minutes | seconds) ago", () => {
     expect(startOfHour(germane("2020-09-12 12:35:45Z"))).toBe("35 minutes ago");
     expect(startOfHour(germane("2019-09-23 23:12:59Z"))).toBe("12 minutes ago");

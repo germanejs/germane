@@ -7,13 +7,13 @@ describe("differenceInMonths returns the difference between two dates in human r
 
     expect(differenceInMonths(germane("2010-12-24"), germane("2050-07-30"))).toBe(475);
 
-    expect(differenceInMonths(germane("1991-11-14"), germane("1979-12-03"))).toBe(143);
+    expect(differenceInMonths(germane("1991-11-14"), germane("1979-12-03"))).toBe(-143);
 
     expect(differenceInMonths(germane("1975-03-20"), germane("1975-03-01"))).toBe(0);
 
     expect(differenceInMonths(germane("1975-02-13"), germane("1975-01-16"))).toBe(0);
 
-    expect(differenceInMonths(new Date("2048 12 02"), new Date("2048 07 31"))).toBe(4);
+    expect(differenceInMonths(new Date("2048 12 02"), new Date("2048 07 31"))).toBe(-4);
 
     expect(differenceInMonths(new Date("2048 07 31"), new Date("2048 12 02"))).toBe(4);
 
@@ -21,7 +21,7 @@ describe("differenceInMonths returns the difference between two dates in human r
 
     expect(differenceInMonths(new Date("2019 02 28"), new Date("2019 03 28"))).toBe(1);
 
-    expect(differenceInMonths(new Date("2019 03 06"), new Date("2019 01 23"))).toBe(1);
+    expect(differenceInMonths(new Date("2019 03 06"), new Date("2019 01 23"))).toBe(-1);
 
     expect(differenceInMonths(new Date("2019 03 06"), new Date("2019 03 06"))).toBe(0);
   });

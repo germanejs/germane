@@ -1,7 +1,7 @@
 const startOfMinute = require("../../../lib/startOfMinute");
 const germane = require("../../../lib/germane");
 
-describe("Returns the time passed since the start of dates' minute", () => {
+describe("Returns the time passed since the startDate of dates' minute", () => {
   test("should return {total seconds passed} ago", () => {
     expect(startOfMinute(germane("2000-01-10 23:09:34"))).toBe("34 seconds ago");
     expect(startOfMinute(germane("2019-08-01 12:11:00Z"))).toBe("0 second ago");

@@ -11,10 +11,10 @@ describe("differenceInSeconds returns the distance between two dates in seconds"
 
     expect(
       differenceInSeconds(germane("2010-11-19T18:34:52Z"), germane("2000-01-23T12:11:09Z")),
-    ).toBe(341562223);
+    ).toBe(-341562223);
 
     expect(
-      differenceInSeconds(new Date("2019 12 31 18:34:52"), new Date("1970 01 01 12:11:09")),
+      differenceInSeconds(new Date("1970 01 01 12:11:09"), new Date("2019 12 31 18:34:52")),
     ).toBe(1577773423);
   });
 
