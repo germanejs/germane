@@ -44,6 +44,7 @@ describe("add adds given date and time values to a given date", () => {
 
   test("should throw an error", () => {
     expect(add(germane("2019 09 09"))).toStrictEqual(new TypeError("Invalid Date"));
+    expect(add(new Date("2019-19-09"))).toStrictEqual(new RangeError("Invalid Date"));
     expect(add(new Date(2019, 11, 11, 23, 11, 45, 11), null)).toStrictEqual(
       new TypeError("Invalid Options, Expected options parameter to be an object"),
     );

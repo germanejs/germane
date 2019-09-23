@@ -47,6 +47,7 @@ describe("subtract (subtracts) given date and time values to a given date", () =
     expect(subtract(new Date(2019, 11, 11, 23, 11, 45, 11), null)).toStrictEqual(
       new TypeError("Invalid Options, Expected options parameter to be an object"),
     );
+       expect(subtract(new Date("2019-19-09"))).toStrictEqual(new RangeError("Invalid Date"));
     expect(
       subtract(new Date("2012 08 11 09:12:11"), {
         years: 12,

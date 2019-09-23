@@ -9,15 +9,15 @@ describe("differenceInBusinessDays returns the difference in business days (usua
 
     expect(differenceInBusinessDays(germane("2019-01-31"), germane("2019-02-28"))).toBe(21);
 
-    expect(differenceInBusinessDays(new Date("2019 03 03"), new Date("2019 03 23"))).toBe(15);
+    expect(differenceInBusinessDays(new Date("2019-03-03"), new Date("2019-03-23"))).toBe(15);
 
-    expect(differenceInBusinessDays(new Date("2019 03 04"), new Date("2019 04 03"))).toBe(23);
+    expect(differenceInBusinessDays(new Date("2019-03-04"), new Date("2019-04-03"))).toBe(23);
 
-    expect(differenceInBusinessDays(germane(new Date("2015 08 05")), germane("2015-07-05"))).toBe(
+    expect(differenceInBusinessDays(germane(new Date("2015-08-05")), germane("2015-07-05"))).toBe(
       -23,
     );
 
-    expect(differenceInBusinessDays(new Date("2015 07 04"), new Date("2015 07 05"))).toBe(0);
+    expect(differenceInBusinessDays(new Date("2015-07-04"), new Date("2015-07-05"))).toBe(0);
   });
 
   test("should throw errors", () => {

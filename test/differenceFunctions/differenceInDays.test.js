@@ -5,11 +5,11 @@ describe("differenceInDays returns the distance or difference between two dates 
   test("should return the number of days between dates specified in test", () => {
     expect(differenceInDays(new Date(), new Date())).toBe(0);
 
-    expect(differenceInDays(new Date("2010 11 19 23:11:02"), new Date("2019 01 23 02:17:09"))).toBe(
+    expect(differenceInDays(new Date("2010-11-19 23:11:02Z"), new Date("2019-01-23 02:17:09Z"))).toBe(
       2987,
     );
 
-    expect(differenceInDays(new Date("2010 11 19 18:34:52"), new Date("2000 01 23 12:11:09"))).toBe(
+    expect(differenceInDays(new Date("2010-11-19 18:34:52Z"), new Date("2000-01-23 12:11:09Z"))).toBe(
       -3953,
     );
 

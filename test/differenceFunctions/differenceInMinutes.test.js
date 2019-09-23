@@ -13,7 +13,7 @@ describe("differenceInMinutes returns the distance between two dates in minutes"
     expect(differenceInMinutes(germane("2019-W09"), germane("2019-W09"))).toBe(0);
 
     expect(
-      differenceInMinutes(new Date("2010 11 19 23:11:02"), new Date("2019 01 23 02:17:09")),
+      differenceInMinutes(new Date("2010-11-19 23:11:02Z"), new Date("2019-01-23 02:17:09Z")),
     ).toBe(4300026);
 
     expect(

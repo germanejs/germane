@@ -6,14 +6,14 @@ describe("differenceInHours returns the distance between two dates in hours", ()
     expect(differenceInHours(new Date(), new Date())).toBe(0);
 
     expect(
-      differenceInHours(new Date("2010 11 19 23:11:02"), new Date("2019 01 23 02:17:09")),
+      differenceInHours(new Date("2010-11-19 23:11:02Z"), new Date("2019-01-23 02:17:09Z")),
     ).toBe(71667);
 
-    expect(differenceInHours(germane("2010-11-19 18:34:52"), germane("2000-01-23 12:11:09"))).toBe(
+    expect(differenceInHours(germane("2010-11-19 18:34:52Z"), germane("2000-01-23 12:11:09Z"))).toBe(
       -94878,
     );
 
-    expect(differenceInHours(germane("1970-01-01 12:11:09"), germane("2019-12-31 18:34:52"))).toBe(
+    expect(differenceInHours(germane("1970-01-01 12:11:09Z"), germane("2019-12-31 18:34:52Z"))).toBe(
       438270,
     );
   });
