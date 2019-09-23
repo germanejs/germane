@@ -104,24 +104,17 @@
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
-<a name='L59'></a><a href='#L59'>59</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">51x</span>
-<span class="cline-any cline-yes">51x</span>
-<span class="cline-any cline-yes">51x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -136,7 +129,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1636x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,23 +137,33 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1636x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1862x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1636x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1636x</span>
-<span class="cline-any cline-yes">1636x</span>
-<span class="cline-any cline-yes">1636x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1636x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1636x</span>
+<span class="cline-any cline-yes">1862x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">51x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1862x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1862x</span>
+<span class="cline-any cline-yes">1862x</span>
+<span class="cline-any cline-yes">1862x</span>
+<span class="cline-any cline-yes">1862x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1862x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">52x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * @author Simeon Akpanudo
  * @fileoverview Epoch function turn a given date to unix epoch timestamp.
@@ -169,7 +171,7 @@
 &nbsp;
 "use strict";
 &nbsp;
-const { floor } = require("../roundingMethods");
+const { trunc } = require("../roundingMethods");
 const { daysInPrevMonths } = require("./getFullYear");
 const ordinalOfPrevYear = require("./ordinal_of_prev_year");
 &nbsp;
@@ -184,10 +186,12 @@ const ordinalOfPrevYear = require("./ordinal_of_prev_year");
  * @param {Number} ms Milliseconds
  * @param {Number} tz Timezone offset in seconds
  * **example** __UTC+1 = 1 hour after the UTC time which is equivalent to 60 minutes__.
- // eslint-disable-next-line max-len
- * @description Epoch function uses the specified datetime units and returns a unix timestamp of the given date as an ISO8601 format.
- // eslint-disable-next-line max-len
- * **Note**: if not parameter is passed the function simple returns 0. meaning that the default parameters is 1970 01 01 00:00:00.
+&nbsp;
+ * @description Epoch function uses the specified datetime units
+ and returns a unix timestamp of the given date as an ISO8601 format.
+&nbsp;
+ * **Note**: if not parameter is passed the function simple returns 0.
+ meaning that the default parameters is 1970 01 01 00:00:00.
  * @example ```javascript
  *  epoch(2019, 4, 1, 4, 7, 23, 500, -60) //=&gt; 1554091643500
  * // Which is equivalent to ISO8601 format 2019-04-01T03:07:23.500Z.
@@ -198,8 +202,8 @@ function epoch(year = <span class="branch-0 cbranch-no" title="branch not covere
     year: 1970,
     month: 1,
     day: 1,
-    hour: floor(tz / 60) + hour,
-    minute: floor(tz % 60) + minute,
+    hour: trunc(tz / 60) + hour,
+    minute: trunc(tz % 60) + minute,
     second: second,
     ms: ms,
   };
@@ -214,7 +218,6 @@ function epoch(year = <span class="branch-0 cbranch-no" title="branch not covere
   mutableSeconds = (ordinalOfPrevYear(year) + x + day - 719163) * 1000 * 86400;
   unixHour = unixEpoch.hour * 3600 * 1000;
   unixMinute = unixEpoch.minute * 60 * 1000;
-&nbsp;
   unixDateTime = mutableSeconds + unixHour + unixMinute + second * 1000 + ms;
 &nbsp;
   return unixDateTime;
@@ -226,7 +229,7 @@ module.exports = epoch;
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Sep 23 2019 00:34:55 GMT+0100 (West Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Sep 23 2019 04:01:52 GMT+0100 (West Africa Standard Time)
 </div>
 </div>
 <script src="..\..\prettify.js"></script>
