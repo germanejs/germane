@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for utils/evaluations/dayOfWeek.js</title>
+    <title>Code coverage report for formatRelative/index.js</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="..\..\prettify.css" />
-    <link rel="stylesheet" href="..\..\base.css" />
+    <link rel="stylesheet" href="..\prettify.css" />
+    <link rel="stylesheet" href="..\base.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(..\..\sort-arrow-sprite.png);
+            background-image: url(..\sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -16,18 +16,18 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="..\..\index.html">All files</a> / <a href="index.html">utils/evaluations</a> dayOfWeek.js
+      <a href="..\index.html">All files</a> / <a href="index.html">formatRelative</a> index.js
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/6</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>6/6</span>
+        <span class='fraction'>3/3</span>
       </div>
     </div>
     <p class="quiet">
@@ -72,11 +72,14 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a>
-<a name='L29'></a><a href='#L29'>29</a>
-<a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -91,51 +94,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7020x</span>
-<span class="cline-any cline-yes">7020x</span>
-<span class="cline-any cline-yes">7020x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7020x</span>
-<span class="cline-any cline-yes">7020x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
  * @author Simeon Akpanudo
- * @fileoverview Computes the day of week for a given date.
+ * @fileoverview Returns a relative time
  */
 &nbsp;
 "use strict";
 &nbsp;
+const format = require("./format");
+&nbsp;
 /**
  *
- * @param {Number} year
- * @param {Number} month
- * @param {Number} date
+ * @param {Date|Number} current Current Date
+ * @param {Date|Number} relative Relative Date.
+ * ```js
+ * formatRelative(new Date("2019-11-11 23:09:11"), new Date("2019-11-11 23:09:11")) //=&gt; 'Just now';
+ * formatRelative(germane("20191109T131311Z"), germane("2019-11-09")) //=&gt; '13 hours ago';
+ * ```
+ * Returns the relative value of two given date,
+ * with the first date parameter as the current,
+ * and second as the relative date.
  */
-function dayOfWeek(year, month, date) {
-  /**
-   * For explanations see [docs/day-of-week-calcuations.md]
-   */
-  const shiftedMonth = [null, 13, 14, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  const correctedYear = month === 1 || month === 2 ? year - 1 : year;
-  const h = (date
-      + Math.floor((13 * (shiftedMonth[month] + 1)) / 5)
-      + correctedYear
-      + Math.floor(correctedYear / 4)
-      - Math.floor(correctedYear / 100)
-      + Math.floor(correctedYear / 400))
-    % 7;
-  const weekday = ((h + 5) % 7) + 1;
-  return weekday;
+function formatRelative(current, relative) {
+  return format(current, relative);
 }
-module.exports = dayOfWeek;
+&nbsp;
+module.exports = formatRelative;
 &nbsp;</pre></td></tr>
 </table></pre>
 <div class='push'></div><!-- for sticky footer -->
@@ -145,7 +133,7 @@ module.exports = dayOfWeek;
   generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Oct 21 2019 21:14:16 GMT+0100 (West Africa Standard Time)
 </div>
 </div>
-<script src="..\..\prettify.js"></script>
+<script src="..\prettify.js"></script>
 <script>
 window.onload = function () {
         if (typeof prettyPrint === 'function') {
@@ -153,7 +141,7 @@ window.onload = function () {
         }
 };
 </script>
-<script src="..\..\sorter.js"></script>
-<script src="..\..\block-navigation.js"></script>
+<script src="..\sorter.js"></script>
+<script src="..\block-navigation.js"></script>
 </body>
 </html>
