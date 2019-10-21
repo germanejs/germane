@@ -25,7 +25,9 @@ test("should return an error", () => {
   expect(
     inRange(new Date("2019 09 09"), Date.now().toString(3), new Date("2020 12 12")),
   ).toStrictEqual(
-    new TypeError("Expected range, startDate and end arguments to be a date object or a timestamp"),
+    new TypeError(
+      "Expected range, relative, start and end arguments to be a date object or a timestamp",
+    ),
   );
 });
 

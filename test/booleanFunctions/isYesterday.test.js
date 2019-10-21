@@ -3,11 +3,11 @@ const germane = require("../../lib/germane");
 
 describe("isYesterday, returns on boolean, whether second given date is in the previous day of the first", () => {
   test("should return true", () => {
-    expect(isYesterday(new Date("2018 12 31"), new Date("2019 01 01"))).toBe(true);
-    expect(isYesterday(new Date("2012 09 14"), new Date("2012 09 15"))).toBe(true);
-    expect(isYesterday(germane("2018-02-13"), germane("2018-02-14"))).toBe(true);
-    expect(isYesterday(germane("2030-10-31"), germane("2030-11-01"))).toBe(true);
-    expect(isYesterday(germane("2019-12-11T20:19:00Z"), germane("2019-12-12T20:19:00Z"))).toBe(
+    expect(isYesterday(new Date("2019-01-01"), new Date("2018-12-31"))).toBe(true);
+    expect(isYesterday(new Date("2012-09-15"), new Date("2012-09-14"))).toBe(true);
+    expect(isYesterday(germane("2018-02-14"), germane("2018-02-13"))).toBe(true);
+    expect(isYesterday(germane("2030-11-01"), germane("2030-10-31"))).toBe(true);
+    expect(isYesterday(germane("2019-12-12T20:19:00Z"), germane("2019-12-11T20:19:00Z"))).toBe(
       true,
     );
   });
