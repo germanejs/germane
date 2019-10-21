@@ -44,7 +44,7 @@ describe("Should return difference between a one year range", () => {
 
 	test("should return 1 month, 4 days", () => {
 		expect(
-			difference(new Date("2019-02-04"), new Date("2019-03-08"))
+			difference(new Date("2019-02-04 23:58Z"), new Date("2019-03-08"))
 		).toStrictEqual({
 			years: 0,
 			months: 1,
@@ -57,7 +57,7 @@ describe("Should return difference between a one year range", () => {
 
 	test("should return 1 month, 4 days", () => {
 		expect(
-			difference(new Date("2019-03-08"), new Date("2019-02-04"))
+			difference(new Date("2019-03-08 11:09:11Z"), new Date("2019-02-04"))
 		).toStrictEqual({
 			years: 0,
 			months: 1,
