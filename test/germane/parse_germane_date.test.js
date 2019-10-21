@@ -54,10 +54,9 @@ describe("parseGermaneDate is the underlying factory function, that parses input
       "Wed Nov 11 2020 00:00:00 UTC+0000 (Coordinated Universal Time)",
     );
 
-    // To-Do
-    // expect(parseGermaneDate(timestamp, "UTC").toString()).toBe(
-    //   "Wed Dec 31 1969 23:59:59 UTC+0000 (Coordinated Universal Time)",
-    // );
+    expect(parseGermaneDate(timestamp, "UTC").toString()).toBe(
+      "Wed Dec 31 1969 23:59:59 UTC+0000 (Coordinated Universal Time)",
+    );
 
     expect(parseGermaneDate("2019 09 09")).toStrictEqual(new RangeError("Invalid Date"));
 
@@ -137,6 +136,13 @@ describe("parseGermaneDate returns an object with date unit values", () => {
     expect(parseGermaneDate(input, "UTC").getSeconds()).toBe(45);
     expect(parseGermaneDate(input, "UTC").getMilliseconds()).toBe(0);
     expect(parseGermaneDate(input, "UTC").getTime()).toBe(1573558485000);
+
+
+    expect(parseGermaneDate(input, "UTC").valueOf()).toBe(1573558485000);
+
+    expect(Number(parseGermaneDate(input, "UTC"))).toBe(1573558485000);
+
+    expect(String(parseGermaneDate(input, "UTC"))).toBe("Tue Nov 12 2019 11:34:45 UTC+0000 (Coordinated Universal Time)");
 
     expect(parseGermaneDate(input, "UTC").getLocalTime()).toBe(1573558485000);
     expect(parseGermaneDate(input, "Africa/Lagos").getLocalTime()).toBe(1573562085000);
