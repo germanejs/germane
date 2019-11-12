@@ -4,8 +4,9 @@
 
 [![Known Vulnerabilities](https://snyk.io/test/github/germanejs/germane/badge.svg)](https://snyk.io/test/github/germanejs/germane)
 
-# Germane ⏲
+[![Github repo size](https://img.shields.io/github/repo-size/germanejs/germane)](https://img.shields.io/github/repo-size/germanejs/germane)
 
+# Germane ⏲
 **A modern/minimalistic Javascript date library for formatting, parsing, validating and manipulating dates.**
 [Documentation](https://germanejs.com)
 
