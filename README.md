@@ -1,5 +1,9 @@
 [![Coverage Status](https://coveralls.io/repos/github/germanejs/germane/badge.svg?branch=master)](https://coveralls.io/github/germanejs/germane?branch=master)
 
+[![GitHub license](https://img.shields.io/github/license/germanejs/geramane.svg)](https://github.com/germanejs/germane/blob/master/LICENSE)
+
+[![Known Vulnerabilities](https://snyk.io/test/github/germanejs/germane/badge.svg)](https://snyk.io/test/github/germanejs/germane)
+
 # Germane ⏲
 
 **A modern/minimalistic Javascript date library for formatting, parsing, validating and manipulating dates.**
