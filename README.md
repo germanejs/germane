@@ -1,6 +1,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/germanejs/germane/badge.svg?branch=master)](https://coveralls.io/github/germanejs/germane?branch=master)
 
-[![GitHub license](https://img.shields.io/github/license/germanejs/geramane.svg)](https://github.com/germanejs/germane/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/germanejs/geramane)](https://github.com/germanejs/germane/blob/master/LICENSE)
 
 [![Known Vulnerabilities](https://snyk.io/test/github/germanejs/germane/badge.svg)](https://snyk.io/test/github/germanejs/germane)
 
