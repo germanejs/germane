@@ -1,5 +1,6 @@
-test/
+_test/
 node_modules/
 .vscode/
 coverage/
 docs/
+test/
