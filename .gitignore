@@ -1,4 +1,7 @@
-node_modules/
-/yarn-error.log
-coverage/
-/helpers.md
+node_modules
+coverage
+yarn-error.log
+*.html
+*.css
+*.xml
+helpers.md
