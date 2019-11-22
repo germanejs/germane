@@ -35,7 +35,7 @@ yarn add germane
 # Usage
 
 ```javascript
-import germane, { format, strftime, differenceInWords } from "germane";
+import { germane, format, strftime, differenceInWords } from "germane";
 
 germane("2019-11-11T15:00:00.000Z", "Asia/Bangkok").toString(); //=> 'Mon Nov 11 2019 22:00:00 UTC+0700 (Indochina Time)'
 
