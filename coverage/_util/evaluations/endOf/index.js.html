@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>50/50</span>
+        <span class='fraction'>56/56</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">64.71% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>50/50</span>
+        <span class='fraction'>56/56</span>
       </div>
     </div>
     <p class="quiet">
@@ -179,7 +179,15 @@
 <a name='L131'></a><a href='#L131'>131</a>
 <a name='L132'></a><a href='#L132'>132</a>
 <a name='L133'></a><a href='#L133'>133</a>
-<a name='L134'></a><a href='#L134'>134</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L134'></a><a href='#L134'>134</a>
+<a name='L135'></a><a href='#L135'>135</a>
+<a name='L136'></a><a href='#L136'>136</a>
+<a name='L137'></a><a href='#L137'>137</a>
+<a name='L138'></a><a href='#L138'>138</a>
+<a name='L139'></a><a href='#L139'>139</a>
+<a name='L140'></a><a href='#L140'>140</a>
+<a name='L141'></a><a href='#L141'>141</a>
+<a name='L142'></a><a href='#L142'>142</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -198,12 +206,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -216,10 +224,12 @@
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">7x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -291,15 +301,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
@@ -331,13 +347,13 @@ const epoch = require("../epoch");
 function endOfQuarterHandler(date) {
   const year = date.getFullYear();
   const dInY = dayOfYear(year, date.getMonth() + 1, date.getDate());
-&nbsp;
   const { quarter } = findQuarter(dInY, year);
-  const endOfPrevYear = epoch(year - 1, 12, 31, 23, 59, 59, 999, date.getTimezoneOffset());
+  const endOfPrevYear = epoch(year - 1, 12, 31, 23, 59, 59, 999);
+  // handles issues with going from a non-DST to a DST or vice-versa.
   const quarterEnd = findQuarterEnd(quarter, year);
-  const newDate = endOfPrevYear + quarterEnd * 86400000;
-&nbsp;
-  return isGermane(date) ? germane(newDate, date.timezone) : <span class="branch-1 cbranch-no" title="branch not covered" >new Date(newDate);</span>
+  const newDate = germane(endOfPrevYear + quarterEnd * 86400000, date.timezone);
+  const handleDaylight = newDate.getTime() + newDate.getTimezoneOffset() * 60 * 1000;
+  return isGermane(date) ? germane(handleDaylight, date.timezone) : <span class="branch-1 cbranch-no" title="branch not covered" >new Date(handleDaylight);</span>
 }
 &nbsp;
 /**
@@ -349,9 +365,11 @@ function endOfMonthHandler(date) {
   const month = date.getMonth() + 1;
 &nbsp;
   const day = getDaysInYear(year)[month];
-  const newDate = epoch(year, month, day, 23, 59, 59, 999, date.getTimezoneOffset());
 &nbsp;
-  return isGermane(date) ? germane(newDate, date.timezone) : <span class="branch-1 cbranch-no" title="branch not covered" >new Date(newDate);</span>
+  // handles issues with going from a non-DST to a DST or vice-versa.
+  const newDate = germane(epoch(year, month, day, 23, 59, 59, 999), date.timezone);
+  const handleDaylight = newDate.getTime() + newDate.getTimezoneOffset() * 60 * 1000;
+  return isGermane(date) ? germane(handleDaylight, date.timezone) : <span class="branch-1 cbranch-no" title="branch not covered" >new Date(handleDaylight);</span>
 }
 &nbsp;
 /**
@@ -424,15 +442,21 @@ function endOfWeekHandler(date, options = { weekStartsOn: 0 }) {
  */
 function endOfYearHandler(date) {
   const year = date.getFullYear();
-  const newDate = epoch(year, 12, 31, 23, 59, 59, 999, date.getTimezoneOffset());
-  return isGermane(date) ? germane(newDate, date.timezone) : <span class="branch-1 cbranch-no" title="branch not covered" >new Date(newDate);</span>
+  // handles issues with going from a non-DST to a DST or vice-versa.
+  const newDate = germane([year, 11, 31, 23, 59, 59, 999], date.timezone);
+  const value = newDate.values();
+  const end = epoch(...[value[0], value[1] + 1, ...value.slice(2, 8)]);
+  return isGermane(date) ? germane(end, newDate.timezone) : <span class="branch-1 cbranch-no" title="branch not covered" >new Date(end);</span>
 }
 &nbsp;
 function endOfDecadeHandler(date) {
   const year = date.getFullYear();
   const endOf = 9 - ((year % 100) % 10);
-  const newDate = epoch(year + endOf, 12, 31, 23, 59, 59, 999, date.getTimezoneOffset());
-  return isGermane(date) ? germane(newDate, date.timezone) : <span class="branch-1 cbranch-no" title="branch not covered" >new Date(newDate);</span>
+  // handles issues with going from a non-DST to a DST or vice-versa.
+  const newDate = germane([year + endOf, 11, 31, 23, 59, 59, 999], date.timezone);
+  const value = newDate.values();
+  const end = epoch(...[value[0], value[1] + 1, ...value.slice(2, 8)]);
+  return isGermane(date) ? germane(end, newDate.timezone) : <span class="branch-1 cbranch-no" title="branch not covered" >new Date(end);</span>
 }
 &nbsp;
 module.exports = {
@@ -451,7 +475,7 @@ module.exports = {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Fri Nov 22 2019 18:58:27 GMT+0100 (West Africa Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Nov 25 2019 11:25:16 GMT+0100 (West Africa Standard Time)
 </div>
 </div>
 <script src="..\..\..\prettify.js"></script>
