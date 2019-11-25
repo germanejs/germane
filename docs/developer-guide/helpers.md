@@ -49,7 +49,6 @@ Germane is a minimalist date and time library.
 - [ ] isSameOrBefore()
 - [ ] isLeapYear()
 - [ ] isBetween()
-- [ ] isSame()
 - [ ] isLocal()
 - [ ] hasWeeks()
 - [ ] hasDays()
@@ -123,10 +122,26 @@ Germane is a minimalist date and time library.
 - [ ] LocaleTimezone()
 - [ ] valueOf()
 - [ ] toString()
-- [ ] createDuration()
-- [ ] averageDuration()
-- [ ] minDuration()
-- [ ] maxDuration()
+- [ ] createDuration(duration, unit)
+
+```js
+  import { createDuration } from "germane";
+
+  const duration1 = createDuration(1000, "minute");
+  const duration2 = createDuration([new Date("2019-09-01 23:11:09.900Z"), new Date("2019-09-02 04:48:50.099Z")], "second");
+  const duration3 = createDuration("23:09:11", "second");
+  const duration4 = createDuration("P3Y6M4DT12H30M5S")
+
+
+```
+- [ ] averageDuration(duration[])
+- [ ] maxDuration(duration[])
+- [ ] minDuration(duration[])
+- [ ] asDays(duration[])
+- [ ] asWeeks(duration[])
+- [ ] asSeconds(duration[])
+- [ ] asMinutes(duration[])
+- [ ] asHours(duration[])
 - [ ] timer({start: typeof Date, end: typeof Date, loop: true, notify: 10})
 
 ```js
@@ -138,7 +153,7 @@ const setTimer = timer({
   loop: true
 });
 
-setTimer.when();
+setTimer.when(); 
 setTimer.loop(
   1000,
   (

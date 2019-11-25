@@ -1,7 +1,7 @@
 {
     "vscode.tsc.compiler.alertTSConfigChanges": "never",
     "editor.autoIndent": true,
-    "editor.tabSize": 4,
+    "editor.tabSize": 2,
     "editor.useTabStops": true,
     "eslint.provideLintTask": true,
     "eslint.enable": true,
