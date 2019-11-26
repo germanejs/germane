@@ -13,6 +13,7 @@
     "editor.lineHeight": 22,
     "eslint.autoFixOnSave": true,
     "editor.formatOnSave": true,
+    "javascript.implicitProjectConfig.checkJs": true,
     // Enable per-language
     "[javascript]": {
         "editor.formatOnSave": true,
