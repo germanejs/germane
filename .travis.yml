@@ -12,7 +12,7 @@ branches:
 script:
   - yarn run lint:fix
   - yarn test
-  - yarn coverage
+
 notifications:
   - email: false
 install:
